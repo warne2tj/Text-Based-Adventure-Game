@@ -1,10 +1,40 @@
 """
 Text Based Adventure Game
 """
+#These are import statements. They are used to include extra functions used for the program.
+#Declare them at the top, and you'll always know where to find them
 import time
 import os
 import random
 import sys
+
+
+
+
+""" GLOBAL VARAIBLES """
+
+#Character Attributes
+health = 100
+intelligence = 10
+strength = 10
+dexterity = 10
+charisma = 10
+
+
+#Character and Map Booleans
+has_health_potion = False
+has_strength_potion = False
+treasure_location = random.randint(1, 4)
+has_shield = False
+visited_cave = False
+visited_beach = False
+
+
+
+
+
+""" FUNCTION DECLARATIONS """
+
 """
 format_console method - This command is going to format the console to the dimensions
 that we want, as well as the background and text color. You can use this to change the
@@ -376,26 +406,13 @@ def location_selection():
         location_selection()
 
 
+
+
+
+""" START THE ADVENTURE """
+
 #Format the console
 format_console()
-
-
-#Character Attributes
-health = 100
-intelligence = 10
-strength = 10
-dexterity = 10
-charisma = 10
-
-
-#Character and Map Booleans
-has_health_potion = False
-has_strength_potion = False
-treasure_location = random.randint(1, 4)
-has_shield = False
-visited_cave = False
-visited_beach = False
-
 
 #Intro text
 print("You wake up a stones throw away from the road, in a an peaceful, grassy meadow. Looking around, you see tall mountains surrounding you with a river to your left.")
