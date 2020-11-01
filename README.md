@@ -21,7 +21,7 @@ This is a multi-line comment (also called a doc-string). Anything between the tr
 ```
 Remember, **I highly recommend using comments to document your code, so you can easily remember what it is doing and what it means!**
 
-# Variale Declaration
+# Variable Declaration
 Variables are something that store values. So if you want to remember the value 5, you can type `my_number = 5`. Then, whenever you reference `my_number`, you are really referencing the value 5. So consider this section of code:
 ```
 my_number = 5
@@ -77,7 +77,7 @@ This example will print `Hello World!` as both conditions evaluate as true. The 
 # Loops: for and while
 This is the last and more technical thing we will talk about. After this, you should be able to create a basic Python text based adventure game.
 
-A loop is exaclty as it sounds, something that keeps happening for a specified amount of time. The for loop run ~for~ a specific amount of times, and a while loop wil run while a specific condition is true. Examples
+A loop is exactly as it sounds, something that keeps happening for a specified amount of time. The for loop run ~for~ a specific amount of times, and a while loop will run while a specific condition is true. Examples
 ```
 #For loop
 for number in range(5):
@@ -86,12 +86,12 @@ for number in range(5):
 #While loop
 my_num = 0
 while my_num < 5:
-  prunt("This repeates 5 times!")
+  print("This repeats 5 times!")
   my_num = my_num + 1
 ```
 There are a few notable things in this example. The for loop runs for each number in the range of 5. `range(5)` is actually a function call, and it returns the number 0, 1, 2, 3, and 4. Notice that it returns 5 numbers, and the loop runs 5 times. This isn't a coincidence. Also notice, the first number is 0, and not 1. This is just an annoying thing that the inventors of programming decided to do!. The important thing is that this for loop runs 5 times, and if you wanted a for loop to run 8 times, you type `for number in range(8)`.
-Now, the while loops is the more useful loop for a text based adventure game. I don't think I use a single for loop. And that is because I want to continue doing a sequence of actions given that a condition isn't met. For example, in the game when you fight the guard, you continue fighting the guard `while` you and the guard still have health remaining. Or, and of the choices you made, like which weapon you wanted, you were stuck chosing a weapon `while` you had not input a valid value. I recommend you take a look at the code for this game, and get a good understanding of this concept. Not allowing a user to pick an invalid input is usually pretty important, because otherwise your game might crash!
-Just to run you through how I handled these scenarios, I used the `clean_input()` function I created to check if the user entered a number or if they entered a string (text). If they entered text, it would return -1, and their choice would be set to -1 (which is a designator value that the use picked invalid choice). Then, the while loop would check if the choice was invalid, and if it was, it would tell the user to pick a proper value. I recommend using this technique for your choices as well. However, you can have the user input text and then use that as well. Say, for creating a character name, or chosing yes or no vs using 1 or 2. But again, I will let you figure out how to do this as a challenge!
+Now, the while loops is the more useful loop for a text based adventure game. I don't think I use a single for loop. And that is because I want to continue doing a sequence of actions given that a condition isn't met. For example, in the game when you fight the guard, you continue fighting the guard `while` you and the guard still have health remaining. Or, and of the choices you made, like which weapon you wanted, you were stuck choosing a weapon `while` you had not input a valid value. I recommend you take a look at the code for this game, and get a good understanding of this concept. Not allowing a user to pick an invalid input is usually pretty important, because otherwise your game might crash!
+Just to run you through how I handled these scenarios, I used the `clean_input()` function I created to check if the user entered a number or if they entered a string (text). If they entered text, it would return -1, and their choice would be set to -1 (which is a designator value that the use picked invalid choice). Then, the while loop would check if the choice was invalid, and if it was, it would tell the user to pick a proper value. I recommend using this technique for your choices as well. However, you can have the user input text and then use that as well. Say, for creating a character name, or choosing yes or no vs using 1 or 2. But again, I will let you figure out how to do this as a challenge!
 
 # Functions/Methods
 Functions and methods are both essentially the same thing (they are semantically different, but you'll learn that if you go into the programming field!). Functions will be how you go to different areas or different sequences in your story. If you look at my code, you'll see `visit_cave()`, `visit_beach()`, and `visit_marrow()`. These functions are called (by typing `visit_cave()`, for example) to do exactly what they say! You can declare a function as follows:
@@ -112,7 +112,7 @@ In this example, these statements will print in logical order. The first will pr
 
 # Other Advanced (But useful!) Concepts
 ### Variable Scope
-Variable scope is kind of like sitting in a house. If I am cooking dinner in my house, people outside my house have no idea that I'm cooking dinner. This parallels varaible scope. For example:
+Variable scope is kind of like sitting in a house. If I am cooking dinner in my house, people outside my house have no idea that I'm cooking dinner. This parallels variable scope. For example:
 ```
 def my_function:
   my_num = 5
@@ -133,7 +133,7 @@ print(my_num)
 In this example, `my_num` is a global varialbe declared outside of any function. That means that any function can access it using the keyword `global`. We use this to change the value of `my_num` to 10. So this code will print 5, and then will call the function, changing the value of `my_num`, and then will print 10. This is incredibly useful for character statistics or items. In my code, I use this to check if the user has a health potion or if they have a shield. If you look at my combat encounter with the guard, I use it a lot in order to to control the flow of the fight, as well as to calculate the damage that the player deals to the guard.
 
 ### Function Parameters
-Function parameters are variables that are passed into a function. This allows that variable to be used in that function. This is useful if you don't want a varaible to have a global scope. But if you want, **you don't need to use this! You can use global variables instead!** For example:
+Function parameters are variables that are passed into a function. This allows that variable to be used in that function. This is useful if you don't want a variable to have a global scope. But if you want, **you don't need to use this! You can use global variables instead!** For example:
 ```
 def my_function(my_variable):
   print(my_variable)
@@ -151,9 +151,9 @@ There are three functions from this that I recommend copying, `clear()`, `clean_
 
 # How To Set Up Your Program
 I recommend a few things that will make creating your program easier. These things will keep you from running into many errors.
-1. The first, is to decalare all player stats or booleans at the beginning of your program. This helps to standardize the location of these variables and make them easier to define.
-2. Next, decalare all functions that you are going to use. This is because Python is *dynamically compiled*. The code reads like a book. While the program is running, **it doesn't know about any code that is has not read yet**. So, if you have a function declared at the end of the file, you can't call it at the beginning of the file. To avoid these errors, have all your functions (different locations, damage calculators, etc.) declared after your global character statistics variables.
+1. The first, is to declare all player stats or booleans at the beginning of your program. This helps to standardize the location of these variables and make them easier to define.
+2. Next, declare all functions that you are going to use. This is because Python is *dynamically compiled*. The code reads like a book. While the program is running, **it doesn't know about any code that is has not read yet**. So, if you have a function declared at the end of the file, you can't call it at the beginning of the file. To avoid these errors, have all your functions (different locations, damage calculators, etc.) declared after your global character statistics variables.
 3. Finally, write the code that starts the adventure at the end of the file. This is just an extension of point two. If you start your adventure at the end, all character statistics and functions will be defined, and you shouldn't run into any `reference before assignment` errors. These errors occur when no variable or function exists at the scope that you called it.
 Bonus Tip: IF you run into an error, Google it! There is nothing wrong with Googling a problem. Google is an excellent resource, especially if the error you are running into is a common error. You will likely find a StackOverflow post that contains your error, an explanation of why it occured, and how to fix it.
 
-I have included a starter file that designates and follows the tips that are outlined above, and it contains the functions that I recommended you copy from my program. Feel free (and I recommend!) downloading this file to use as a base for creating your own adventure game! With all this being said, goodluck!
+I have included a starter file that designates and follows the tips that are outlined above, and it contains the functions that I recommended you copy from my program. Feel free (and I recommend!) downloading this file to use as a base for creating your own adventure game! With all this being said, good luck!
